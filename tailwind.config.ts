@@ -57,6 +57,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        fairflow: {
+          blue: "hsl(var(--fairflow-blue))",
+          "blue-light": "hsl(var(--fairflow-blue-light))",
+          bg: "hsl(var(--fairflow-bg))",
+          card: "hsl(var(--fairflow-card))",
+          green: "hsl(var(--fairflow-green))",
+        },
+      },
+      fontFamily: {
+        oxanium: ['Oxanium', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        istok: ['Istok Web', 'sans-serif'],
+        instrument: ['Instrument Sans', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
