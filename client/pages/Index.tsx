@@ -34,12 +34,12 @@ export default function Index() {
       </header>
 
       {/* Main Dashboard */}
-      <div className="bg-[rgba(107,162,196,0.46)] flex-1 px-8 py-6 overflow-hidden">
+      <div className="bg-[rgba(107,162,196,0.46)] flex-1 px-8 py-6 overflow-hidden flex flex-col">
         <div className="h-full flex flex-col">
           {/* Top Section - User Info and Top Contributors */}
           <div className="grid grid-cols-2 gap-4 mb-4 flex-shrink-0">
             {/* User Info Card */}
-            <div className="bg-[rgba(222,246,255,0.2)] rounded-xl p-6">
+            <div className="bg-[rgba(222,246,255,0.5)] rounded-xl p-6">
               <div className="font-instrument text-sm leading-tight">
                 <p className="mb-2 text-xs">Hello User...</p>
                 <p className="mb-1">
@@ -59,7 +59,7 @@ export default function Index() {
             </div>
 
             {/* Top Contributors Card */}
-            <div className="bg-[rgba(222,246,255,0.2)] rounded-xl p-6 flex items-center gap-6">
+            <div className="bg-[rgba(222,246,255,0.5)] rounded-xl p-6 flex items-center gap-6 relative">
               <div className="flex-shrink-0">
                 <h3 className="font-instrument text-xs font-semibold mb-2">
                   Top Contributors
@@ -73,8 +73,8 @@ export default function Index() {
               </div>
               
               {/* Pie Chart */}
-              <div className="relative flex-shrink-0 w-32 h-32">
-                <svg viewBox="0 0 354 335" fill="none" className="opacity-95">
+              <div className="relative flex-shrink-0 w-40 h-40">
+                <svg viewBox="0 0 354 335" fill="none" className="opacity-95 w-full h-full">
                   <g opacity="0.95">
                     <mask id="path-1-inside-1" fill="white">
                       <path d="M177 0C274.754 0 354 74.9923 354 167.5C354 260.008 274.754 335 177 335C79.2456 335 0 260.008 0 167.5C0 74.9923 79.2456 0 177 0Z"/>
@@ -91,6 +91,12 @@ export default function Index() {
                   {/* User4 - 10% (top left) */}
                   <line x1="177" y1="167.5" x2="40" y2="71.5" stroke="white" strokeWidth="3"/>
                 </svg>
+                
+                {/* User Labels positioned around the pie chart */}
+                <div className="absolute top-0 right-4 font-inter text-xs font-medium">User4</div>
+                <div className="absolute top-1/3 right-0 font-inter text-xs font-medium">User1</div>
+                <div className="absolute top-1/3 left-0 font-inter text-xs font-medium">User3</div>
+                <div className="absolute bottom-0 left-1/3 font-inter text-xs font-medium">User2</div>
               </div>
             </div>
           </div>
@@ -98,7 +104,7 @@ export default function Index() {
           {/* Bottom Section - Three Cards */}
           <div className="grid grid-cols-12 gap-3 flex-1 overflow-hidden">
             {/* Recents Card */}
-            <div className="col-span-4 bg-[rgba(222,246,255,0.2)] rounded-xl p-5 overflow-y-auto">
+            <div className="col-span-4 bg-[rgba(222,246,255,0.5)] rounded-xl p-5 overflow-y-auto">
               <div className="font-instrument text-xs leading-relaxed">
                 <h3 className="font-bold mb-2 text-xs">Recents:</h3>
                 <ul className="font-medium space-y-1 text-xs">
@@ -111,7 +117,7 @@ export default function Index() {
             </div>
 
             {/* Fairness Insights Card */}
-            <div className="col-span-3 bg-[rgba(222,246,255,0.2)] rounded-xl p-5 overflow-y-auto">
+            <div className="col-span-3 bg-[rgba(222,246,255,0.5)] rounded-xl p-5 overflow-y-auto">
               <h3 className="font-instrument text-xs font-bold mb-3">Fairness Insights</h3>
               <div className="font-instrument text-xs space-y-2">
                 <p className="flex items-start gap-1.5">
@@ -134,7 +140,7 @@ export default function Index() {
             </div>
 
             {/* Contribution Sources Card */}
-            <div className="col-span-5 bg-[rgba(222,246,255,0.2)] rounded-xl p-5 overflow-y-auto">
+            <div className="col-span-5 bg-[rgba(222,246,255,0.5)] rounded-xl p-5 overflow-y-auto">
               <h3 className="font-instrument text-xs font-bold mb-3">Contribution Sources:</h3>
               <div className="space-y-2 font-instrument text-xs font-medium">
                 <div className="flex items-center justify-between gap-2">
@@ -183,14 +189,14 @@ export default function Index() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-fairflow-blue opacity-85 rounded-t-3xl flex items-center justify-around py-4 flex-shrink-0 shadow-lg">
-        <button className="font-instrument text-sm font-medium text-white underline decoration-2 underline-offset-2 hover:opacity-80 transition-opacity drop-shadow-lg">
+      <div className="bg-fairflow-blue opacity-85 rounded-t-3xl flex items-center justify-around py-3 px-8 flex-shrink-0 shadow-lg mt-auto">
+        <button className="font-instrument text-xs font-medium text-white underline decoration-2 underline-offset-2 hover:opacity-80 transition-opacity drop-shadow-lg">
           Dashboard
         </button>
-        <button className="font-instrument text-sm font-medium text-white hover:opacity-80 transition-opacity drop-shadow-lg">
+        <button className="font-instrument text-xs font-medium text-white hover:opacity-80 transition-opacity drop-shadow-lg">
           Integrate
         </button>
-        <button className="font-instrument text-sm font-medium text-white hover:opacity-80 transition-opacity drop-shadow-lg">
+        <button className="font-instrument text-xs font-medium text-white hover:opacity-80 transition-opacity drop-shadow-lg">
           Reports
         </button>
       </div>
