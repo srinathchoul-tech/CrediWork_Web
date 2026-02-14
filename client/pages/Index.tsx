@@ -38,7 +38,7 @@ export default function Index() {
       </header>
 
       {/* Main Content - Scrollable Content Area */}
-      <div className="flex-1 px-8 py-8 overflow-y-auto flex flex-col" style={{ backgroundColor: '#6BA2C4' }}>
+      <div className="flex-1 px-8 py-8 overflow-y-auto flex flex-col" style={{ backgroundColor: '#8BB5D1' }}>
         <div className="flex flex-col gap-8">
           {/* Top Section - Team Overview and Top Contributors */}
           <div className="rounded-3xl p-12 shadow-sm" style={{ backgroundColor: 'rgba(232,246,250,0.95)' }}>
@@ -183,7 +183,7 @@ export default function Index() {
     </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0 rounded-t-3xl">
+      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0">
         <button 
           onClick={() => navigate("/")}
           className="font-inter text-base font-bold text-white underline decoration-2 underline-offset-4 hover:opacity-80 transition-opacity">

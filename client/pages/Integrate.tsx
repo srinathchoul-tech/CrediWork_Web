@@ -49,7 +49,7 @@ export default function Integrate() {
       </header>
 
       {/* Main Content - Scrollable Content Area */}
-      <div className="flex-1 px-8 py-8 overflow-y-auto flex flex-col" style={{ backgroundColor: '#6BA2C4' }}>
+      <div className="flex-1 px-8 py-8 overflow-y-auto flex flex-col" style={{ backgroundColor: '#8BB5D1' }}>
         <div className="flex flex-col gap-8">
           {/* Integration Overview Card */}
           <div className="rounded-3xl p-12 shadow-sm" style={{ backgroundColor: 'rgba(232,246,250,0.95)' }}>
@@ -84,13 +84,13 @@ export default function Integrate() {
                 <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Tools:</h3>
                 <div className="space-y-4">
                   {tools.map((tool, index) => (
-                    <div key={index} className="flex items-center justify-between bg-white rounded-xl p-4">
+                    <div key={index} className="flex items-center justify-between">
                       <span className="font-inter text-base font-semibold text-gray-800">{tool.name}</span>
                       <button
                         className={`font-inter text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors ${
                           isConnected(tool.status)
-                            ? "bg-purple-200 text-purple-800"
-                            : "bg-green-200 text-green-800"
+                            ? "bg-green-200 text-green-800 hover:bg-green-300"
+                            : "bg-blue-200 text-blue-800 hover:bg-blue-300"
                         }`}
                       >
                         {tool.status}
@@ -104,19 +104,19 @@ export default function Integrate() {
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Tracking metrics:</h3>
                 <ul className="font-inter text-base space-y-4 text-gray-700 leading-relaxed">
-                  <li className="flex items-start gap-3 bg-white rounded-lg p-3">
+                  <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 text-fairflow-blue font-bold text-lg">•</span>
                     <span>Commits tracked: <span className="font-bold text-fairflow-blue">24</span></span>
                   </li>
-                  <li className="flex items-start gap-3 bg-white rounded-lg p-3">
+                  <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 text-fairflow-blue font-bold text-lg">•</span>
                     <span>Document edits: <span className="font-bold text-fairflow-blue">16</span></span>
                   </li>
-                  <li className="flex items-start gap-3 bg-white rounded-lg p-3">
+                  <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 text-fairflow-blue font-bold text-lg">•</span>
                     <span>Comments added: <span className="font-bold text-fairflow-blue">12</span></span>
                   </li>
-                  <li className="flex items-start gap-3 bg-white rounded-lg p-3">
+                  <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 text-fairflow-blue font-bold text-lg">•</span>
                     <span>Versions detected: <span className="font-bold text-fairflow-blue">8</span></span>
                   </li>
@@ -128,7 +128,7 @@ export default function Integrate() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0 rounded-t-3xl">
+      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0">
         <button
           onClick={() => navigate("/")}
           className="font-inter text-base font-medium text-white hover:text-blue-100 hover:font-bold transition-all"
