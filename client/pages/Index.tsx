@@ -61,14 +61,14 @@ export default function Index() {
               {/* Right: Top Contributors */}
               <div className="bg-white rounded-2xl p-8 shadow-sm">
                 <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Top Contributors</h3>
-                <div className="flex items-start gap-6">
+                <div className="flex items-center gap-8">
                   <div className="flex-1 space-y-3 font-inter text-base text-gray-700">
                     <p>1. User1 - <span className="font-bold">45%</span></p>
                     <p>2. User2 - <span className="font-bold">25%</span></p>
                     <p>3. User3 - <span className="font-bold">20%</span></p>
                     <p>4. User4 - <span className="font-bold">10%</span></p>
                   </div>
-                  <div className="relative flex-shrink-0 w-48 h-48">
+                  <div className="relative flex-shrink-0 w-64 h-64">
                     <svg viewBox="0 0 354 335" fill="none" className="opacity-95 w-full h-full">
                       <g opacity="0.95">
                         <mask id="path-1-inside-1" fill="white">
@@ -84,11 +84,15 @@ export default function Index() {
                       <line x1="177" y1="167.5" x2="40" y2="71.5" stroke="white" strokeWidth="3"/>
                     </svg>
 
-                    {/* User Labels inside the pie segments */}
-                    <div className="absolute top-[15%] left-[30%] font-inter text-sm font-medium text-gray-700">User4</div>
-                    <div className="absolute top-[40%] right-[10%] font-inter text-sm font-medium text-gray-700">User1</div>
-                    <div className="absolute top-[45%] left-[5%] font-inter text-sm font-medium text-gray-700">User3</div>
-                    <div className="absolute bottom-[15%] left-[35%] font-inter text-sm font-medium text-gray-700">User2</div>
+                    {/* User Labels inside the pie segments - positioned in center of each segment */}
+                    {/* User4 - Top left segment (10% - smallest) */}
+                    <div className="absolute top-[22%] left-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User4</div>
+                    {/* User1 - Top right segment (45% - largest) */}
+                    <div className="absolute top-[32%] right-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User1</div>
+                    {/* User3 - Bottom left segment (20%) */}
+                    <div className="absolute bottom-[32%] left-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User3</div>
+                    {/* User2 - Bottom right segment (25%) */}
+                    <div className="absolute bottom-[24%] right-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User2</div>
                   </div>
                 </div>
               </div>
