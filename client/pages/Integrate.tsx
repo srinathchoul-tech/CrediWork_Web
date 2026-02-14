@@ -21,7 +21,7 @@ export default function Integrate() {
         <div className="mx-auto px-8 py-5 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <h1 className="font-oxanium text-2xl font-bold leading-[100%] tracking-[-0.45px] text-fairflow-blue">
-              FairFlow
+              CrediWork
             </h1>
             <p className="font-istok text-sm leading-[100%] tracking-[-0.2px] text-gray-600 font-medium">
               Signed in as Group member
@@ -53,7 +53,7 @@ export default function Integrate() {
         <div className="flex flex-col gap-8">
           {/* Integration Overview Card */}
           <div className="rounded-3xl p-12 shadow-sm" style={{ backgroundColor: 'rgba(232,246,250,0.95)' }}>
-            <h2 className="font-oxanium text-3xl font-semibold mb-8 text-gray-800">Integration Overview</h2>
+            <h2 className="font-oxanium text-3xl font-semibold mb-8 text-gray-800">Integration Overview:</h2>
 
             <div className="grid grid-cols-2 gap-12">
               <div className="bg-white rounded-2xl p-8 shadow-sm">
@@ -81,7 +81,7 @@ export default function Integrate() {
             <div className="grid grid-cols-2 gap-12">
               {/* Tools Section */}
               <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Tools</h3>
+                <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Tools:</h3>
                 <div className="space-y-4">
                   {tools.map((tool, index) => (
                     <div key={index} className="flex items-center justify-between bg-white rounded-xl p-4">
@@ -89,8 +89,8 @@ export default function Integrate() {
                       <button
                         className={`font-inter text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors ${
                           isConnected(tool.status)
-                            ? "bg-fairflow-blue text-white"
-                            : "bg-white text-fairflow-blue border border-gray-200"
+                            ? "bg-purple-200 text-purple-800"
+                            : "bg-green-200 text-green-800"
                         }`}
                       >
                         {tool.status}
@@ -102,7 +102,7 @@ export default function Integrate() {
 
               {/* Tracking Metrics Section */}
               <div className="bg-white rounded-2xl p-8 shadow-sm">
-                <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Tracking Metrics</h3>
+                <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Tracking metrics:</h3>
                 <ul className="font-inter text-base space-y-4 text-gray-700 leading-relaxed">
                   <li className="flex items-start gap-3 bg-white rounded-lg p-3">
                     <span className="flex-shrink-0 text-fairflow-blue font-bold text-lg">•</span>

@@ -1,148 +1,186 @@
-                {/* Pie Chart with labels inside */}
-                <div className="relative flex-shrink-0 w-48 h-48">
-                  <svg viewBox="0 0 354 335" fill="none" className="opacity-95 w-full h-full">
-                    <g opacity="0.95">
-                      <mask id="path-1-inside-1" fill="white">
-                        <path d="M177 0C274.754 0 354 74.9923 354 167.5C354 260.008 274.754 335 177 335C79.2456 335 0 260.008 0 167.5C0 74.9923 79.2456 0 177 0Z"/>
-                      </mask>
-                      <path d="M177 0C274.754 0 354 74.9923 354 167.5C354 260.008 274.754 335 177 335C79.2456 335 0 260.008 0 167.5C0 74.9923 79.2456 0 177 0Z" fill="#D9D9D9"/>
-                      <path d="M177 0V3C273.256 3 351 76.8029 351 167.5H354H357C357 73.1817 276.253 -3 177 -3V0ZM354 167.5H351C351 258.197 273.256 332 177 332V335V338C276.253 338 357 261.818 357 167.5H354ZM177 335V332C80.7444 332 3 258.197 3 167.5H0H-3C-3 261.818 77.7468 338 177 338V335ZM0 167.5H3C3 76.8029 80.7444 3 177 3V0V-3C77.7468 -3 -3 73.1817 -3 167.5H0Z" fill="#6BA2C4" mask="url(#path-1-inside-1)"/>
-                    </g>
-                    {/* Division lines */}
-                    <line x1="177" y1="167.5" x2="177" y2="0" stroke="white" strokeWidth="3"/>
-                    <line x1="177" y1="167.5" x2="241" y2="327.5" stroke="white" strokeWidth="3"/>
-                    <line x1="177" y1="167.5" x2="40" y2="283.5" stroke="white" strokeWidth="3"/>
-                    <line x1="177" y1="167.5" x2="40" y2="71.5" stroke="white" strokeWidth="3"/>
-                  </svg>
+import { useNavigate } from "react-router-dom";
 
-                  {/* User Labels inside the pie segments */}
-                  <div className="absolute top-[15%] left-[30%] font-inter text-sm font-medium text-gray-700">User4</div>
-                  <div className="absolute top-[40%] right-[10%] font-inter text-sm font-medium text-gray-700">User1</div>
-                  <div className="absolute top-[45%] left-[5%] font-inter text-sm font-medium text-gray-700">User3</div>
-                  <div className="absolute bottom-[15%] left-[35%] font-inter text-sm font-medium text-gray-700">User2</div>
+export default function Index() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="h-screen bg-white flex flex-col">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-100 shadow-lg flex-shrink-0">
+        <div className="mx-auto px-8 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <h1 className="font-oxanium text-2xl font-bold leading-[100%] tracking-[-0.45px] text-fairflow-blue">
+              CrediWork
+            </h1>
+            <p className="font-istok text-sm leading-[100%] tracking-[-0.2px] text-gray-600 font-medium">
+              Signed in as Group member
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-6">
+            <nav className="flex items-center gap-8">
+              <a href="#" className="font-inter text-base text-fairflow-blue hover:text-blue-700 transition-colors font-medium">
+                Notifications
+              </a>
+              <a href="#" className="font-inter text-base text-fairflow-blue hover:text-blue-700 transition-colors font-medium">
+                Contributions
+              </a>
+              <a href="#" className="font-inter text-base text-fairflow-blue hover:text-blue-700 transition-colors font-medium">
+                My profile
+              </a>
+            </nav>
+            
+            <button className="bg-fairflow-blue text-white font-inter text-sm font-semibold px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors duration-200 whitespace-nowrap">
+              Signout →
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content - Scrollable Content Area */}
+      <div className="flex-1 px-8 py-8 overflow-y-auto flex flex-col" style={{ backgroundColor: '#6BA2C4' }}>
+        <div className="flex flex-col gap-8">
+          {/* Top Section - Team Overview and Top Contributors */}
+          <div className="rounded-3xl p-12 shadow-sm" style={{ backgroundColor: 'rgba(232,246,250,0.95)' }}>
+            <div className="grid grid-cols-2 gap-12">
+              {/* Left: Team Overview */}
+              <div className="bg-fairflow-blue rounded-2xl p-8 shadow-sm">
+                <h2 className="font-oxanium text-2xl font-semibold mb-6 text-white">Team Overview</h2>
+                <div className="space-y-4 font-inter text-base text-white">
+                  <p>Hello User...</p>
+                  <p><span className="font-semibold">Team:</span> FutureHack</p>
+                  <p><span className="font-semibold">Members:</span> 4</p>
+                  <p>
+                    <span className="font-semibold">Project Status:</span>{" "}
+                    <span className="text-green-300 font-bold">Active</span>
+                  </p>
+                  <p><span className="font-semibold">Last Sync:</span> 10 minutes ago</p>
+                </div>
+              </div>
+
+              {/* Right: Top Contributors */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm">
+                <h3 className="font-oxanium text-2xl font-semibold mb-6 text-gray-800">Top Contributors</h3>
+                <div className="flex items-start gap-6">
+                  <div className="flex-1 space-y-3 font-inter text-base text-gray-700">
+                    <p>1. User1 - <span className="font-bold">45%</span></p>
+                    <p>2. User2 - <span className="font-bold">25%</span></p>
+                    <p>3. User3 - <span className="font-bold">20%</span></p>
+                    <p>4. User4 - <span className="font-bold">10%</span></p>
+                  </div>
+                  <div className="relative flex-shrink-0 w-48 h-48">
+                    <svg viewBox="0 0 354 335" fill="none" className="opacity-95 w-full h-full">
+                      <g opacity="0.95">
+                        <mask id="path-1-inside-1" fill="white">
+                          <path d="M177 0C274.754 0 354 74.9923 354 167.5C354 260.008 274.754 335 177 335C79.2456 335 0 260.008 0 167.5C0 74.9923 79.2456 0 177 0Z"/>
+                        </mask>
+                        <path d="M177 0C274.754 0 354 74.9923 354 167.5C354 260.008 274.754 335 177 335C79.2456 335 0 260.008 0 167.5C0 74.9923 79.2456 0 177 0Z" fill="#D9D9D9"/>
+                        <path d="M177 0V3C273.256 3 351 76.8029 351 167.5H354H357C357 73.1817 276.253 -3 177 -3V0ZM354 167.5H351C351 258.197 273.256 332 177 332V335V338C276.253 338 357 261.818 357 167.5H354ZM177 335V332C80.7444 332 3 258.197 3 167.5H0H-3C-3 261.818 77.7468 338 177 338V335ZM0 167.5H3C3 76.8029 80.7444 3 177 3V0V-3C77.7468 -3 -3 73.1817 -3 167.5H0Z" fill="#6BA2C4" mask="url(#path-1-inside-1)"/>
+                      </g>
+                      {/* Division lines */}
+                      <line x1="177" y1="167.5" x2="177" y2="0" stroke="white" strokeWidth="3"/>
+                      <line x1="177" y1="167.5" x2="241" y2="327.5" stroke="white" strokeWidth="3"/>
+                      <line x1="177" y1="167.5" x2="40" y2="283.5" stroke="white" strokeWidth="3"/>
+                      <line x1="177" y1="167.5" x2="40" y2="71.5" stroke="white" strokeWidth="3"/>
+                    </svg>
+
+                    {/* User Labels inside the pie segments */}
+                    <div className="absolute top-[15%] left-[30%] font-inter text-sm font-medium text-gray-700">User4</div>
+                    <div className="absolute top-[40%] right-[10%] font-inter text-sm font-medium text-gray-700">User1</div>
+                    <div className="absolute top-[45%] left-[5%] font-inter text-sm font-medium text-gray-700">User3</div>
+                    <div className="absolute bottom-[15%] left-[35%] font-inter text-sm font-medium text-gray-700">User2</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bottom Section - three columns: Recents, Fairness Insights, Contribution Sources */}
-          <div className="grid grid-cols-3 gap-6 mt-6">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-800">Recents</h3>
-              <div className="space-y-3 mt-4 font-inter text-sm text-gray-700">
-                <p>Uploaded dataset.csv</p>
-                <p>Trained model v1.02</p>
-                <p>Updated labels</p>
+          <div className="rounded-3xl p-12 shadow-sm" style={{ backgroundColor: 'rgba(232,246,250,0.95)' }}>
+            <div className="grid grid-cols-3 gap-6">
+              {/* Recents */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm">
+                <h3 className="font-oxanium text-xl font-semibold mb-4 text-gray-800">Recents:</h3>
+                <ul className="space-y-3 mt-4 font-inter text-sm text-gray-700 list-disc list-inside">
+                  <li>User1 pushed GitHub commit</li>
+                  <li>User3 edited Google Doc</li>
+                  <li>User2 updated Figma design</li>
+                  <li>Website page modified</li>
+                </ul>
               </div>
-            </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-800">Fairness Insights</h3>
-              <div className="space-y-3 mt-4 font-inter text-sm text-gray-700">
-                <p>Accuracy disparity: 4%</p>
-                <p>Demographic parity: 89%</p>
-                <p>Calibration: Good</p>
+              {/* Fairness Insights */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm">
+                <h3 className="font-oxanium text-xl font-semibold mb-4 text-gray-800">Fairness Insights</h3>
+                <div className="font-inter text-base space-y-4 text-gray-700 leading-relaxed mt-4">
+                  <p className="flex items-start gap-3">
+                    <span className="text-green-600 flex-shrink-0 font-bold text-xl">✓</span>
+                    <span>Contribution balance: <span className="font-bold text-green-700">Good</span></span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="flex-shrink-0 font-bold text-xl text-red-500">–</span>
+                    <span>User4 low activity detected</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="text-green-600 flex-shrink-0 font-bold text-xl">✓</span>
+                    <span>Team collaboration <span className="font-bold text-green-700">consistent</span></span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="flex-shrink-0 font-bold text-xl text-red-500">–</span>
+                    <span>Large gap in contribution size</span>
+                  </p>
+                </div>
               </div>
-            </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-800">Contribution Sources</h3>
-              <div className="space-y-4 mt-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-inter text-sm text-gray-700">Docs</span>
-                  <div className="w-52 bg-gray-200 h-3 rounded-full overflow-hidden ml-4">
-                    <div className="h-3 bg-blue-500 rounded-full" style={{ width: '40%' }} />
+              {/* Contribution Sources */}
+              <div className="bg-white rounded-2xl p-8 shadow-sm">
+                <h3 className="font-oxanium text-xl font-semibold mb-4 text-gray-800">Contribution Sources:</h3>
+                <div className="space-y-4 mt-4 font-inter text-base">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-gray-700">GitHub</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-52 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-gray-400" style={{ width: '40%' }}></div>
+                      </div>
+                      <span className="text-gray-700 font-semibold w-12 text-right">40%</span>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-inter text-sm text-gray-700">Notebooks</span>
-                  <div className="w-52 bg-gray-200 h-3 rounded-full overflow-hidden ml-4">
-                    <div className="h-3 bg-emerald-500 rounded-full" style={{ width: '25%' }} />
+
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-gray-700">Google Docs</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-52 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-gray-400" style={{ width: '30%' }}></div>
+                      </div>
+                      <span className="text-gray-700 font-semibold w-12 text-right">30%</span>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-inter text-sm text-gray-700">Scripts</span>
-                  <div className="w-52 bg-gray-200 h-3 rounded-full overflow-hidden ml-4">
-                    <div className="h-3 bg-pink-500 rounded-full" style={{ width: '20%' }} />
+
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-gray-700">Figma</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-52 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-gray-400" style={{ width: '20%' }}></div>
+                      </div>
+                      <span className="text-gray-700 font-semibold w-12 text-right">20%</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-gray-700">Notion</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-52 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="h-full bg-gray-400" style={{ width: '10%' }}></div>
+                      </div>
+                      <span className="text-gray-700 font-semibold w-12 text-right">10%</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-blue-50 rounded-2xl p-8">
-                  <h3 className="font-inter text-lg font-bold mb-6 text-gray-800">Fairness Insights</h3>
-                  <div className="font-inter text-base space-y-4 text-gray-700 leading-relaxed">
-                    <p className="flex items-start gap-3 p-3 bg-white rounded-lg">
-                      <span className="text-green-600 flex-shrink-0 font-bold text-xl">✓</span>
-                      <span>Contribution balance: <span className="font-bold text-green-700">Good</span></span>
-                    </p>
-                    <p className="flex items-start gap-3 p-3 bg-white rounded-lg">
-                      <span className="flex-shrink-0 font-bold text-xl text-red-500">–</span>
-                      <span>User4 low activity detected</span>
-                    </p>
-                    <p className="flex items-start gap-3 p-3 bg-white rounded-lg">
-                      <span className="text-green-600 flex-shrink-0 font-bold text-xl">✓</span>
-                      <span>Team collaboration <span className="font-bold text-green-700">consistent</span></span>
-                    </p>
-                    <p className="flex items-start gap-3 p-3 bg-white rounded-lg">
-                      <span className="flex-shrink-0 font-bold text-xl text-red-500">–</span>
-                      <span>Large gap in contribution size</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-blue-50 rounded-2xl p-8">
-                  <h3 className="font-inter text-lg font-bold mb-6 text-gray-800">Contribution Sources</h3>
-                  <div className="space-y-5 font-inter text-base">
-                    <div className="bg-white p-4 rounded-xl">
-                      <div className="flex items-center justify-between gap-4 mb-2">
-                        <span className="text-gray-800 font-semibold">GitHub</span>
-                        <span className="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-full text-sm">40%</span>
-                      </div>
-                      <div className="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-blue-500" style={{ width: '40%' }}></div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white p-4 rounded-xl">
-                      <div className="flex items-center justify-between gap-4 mb-2">
-                        <span className="text-gray-800 font-semibold">Google Docs</span>
-                        <span className="bg-cyan-100 text-cyan-800 font-bold px-3 py-1 rounded-full text-sm">30%</span>
-                      </div>
-                      <div className="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-cyan-500" style={{ width: '30%' }}></div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white p-4 rounded-xl">
-                      <div className="flex items-center justify-between gap-4 mb-2">
-                        <span className="text-gray-800 font-semibold">Figma</span>
-                        <span className="bg-pink-100 text-pink-800 font-bold px-3 py-1 rounded-full text-sm">20%</span>
-                      </div>
-                      <div className="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-pink-500" style={{ width: '20%' }}></div>
-                      </div>
-                    </div>
-
-                    <div className="bg-white p-4 rounded-xl">
-                      <div className="flex items-center justify-between gap-4 mb-2">
-                        <span className="text-gray-800 font-semibold">Notion</span>
-                        <span className="bg-purple-100 text-purple-800 font-bold px-3 py-1 rounded-full text-sm">10%</span>
-                      </div>
-                      <div className="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div className="h-full bg-purple-500" style={{ width: '10%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
         </div>
       </div>
+    </div>
 
       {/* Bottom Navigation */}
       <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0 rounded-t-3xl">
