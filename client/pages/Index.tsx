@@ -86,13 +86,13 @@ export default function Index() {
 
                     {/* User Labels inside the pie segments - positioned in center of each segment */}
                     {/* User4 - Top left segment (10% - smallest) */}
-                    <div className="absolute top-[22%] left-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User4</div>
+                    <div className="absolute top-[20%] left-[26%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User4</div>
                     {/* User1 - Top right segment (45% - largest) */}
-                    <div className="absolute top-[32%] right-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User1</div>
+                    <div className="absolute top-[42%] right-[20%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User1</div>
                     {/* User3 - Bottom left segment (20%) */}
-                    <div className="absolute bottom-[32%] left-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User3</div>
+                    <div className="absolute bottom-[46%] left-[16%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User3</div>
                     {/* User2 - Bottom right segment (25%) */}
-                    <div className="absolute bottom-[24%] right-[22%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User2</div>
+                    <div className="absolute bottom-[20%] right-[46%] font-inter text-sm font-semibold text-gray-800 whitespace-nowrap">User2</div>
                   </div>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function Index() {
     </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0">
+      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-4 px-8 flex-shrink-0">
         <button 
           onClick={() => navigate("/")}
           className="font-inter text-base font-bold text-white underline decoration-2 underline-offset-4 hover:opacity-80 transition-opacity">

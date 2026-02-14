@@ -128,7 +128,7 @@ export default function Integrate() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-6 px-8 flex-shrink-0">
+      <div className="bg-fairflow-blue shadow-md flex items-center justify-center gap-20 py-4 px-8 flex-shrink-0">
         <button
           onClick={() => navigate("/")}
           className="font-inter text-base font-medium text-white hover:text-blue-100 hover:font-bold transition-all"
